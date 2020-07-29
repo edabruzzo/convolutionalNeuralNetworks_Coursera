@@ -1,0 +1,82 @@
+https://cs231n.github.io/convolutional-networks/#:~:text=In%20general%2C%20setting%20zero%20padding,talk%20more%20about%20ConvNet%20architectures.
+
+https://www.semanticscholar.org/paper/Convolutional-Neural-Networks-for-Speech-Abdel-Hamid-Mohamed/86efe7769f2b8a0e15ca213ab09881e6705caeb0?p2df
+
+https://www.researchgate.net/publication/259118517_Predicting_utterance_pitch_targets_in_Yoruba_for_tone_realisation_in_speech_synthesis
+
+https://www.researchgate.net/journal/0167-6393_Speech_Communication
+
+https://scholar.google.com/citations?user=n2o5oeQAAAAJ&hl=pt-BR
+Tone realisation for speech synthesis of Yorubá
+
+
+http://researchspace.csir.co.za/dspace/handle/10204/5885
+
+ http://www.mica.edu.vn/sltu2012/files/proceedings/11.pdf
+
+Autores
+Daniel Rudolph Van Niekerk
+Data de publicação
+2014
+Instituição
+North West University
+Descrição
+Speech technologies such as text-to-speech synthesis (TTS) and automatic speech recognition (ASR) have recently generated much interest in the developed world as a user-interface medium to smartphones [1, 2]. However, it is also recognised that these technologies may potentially have a positive impact on the lives of those in the developing world, especially in Africa, by presenting an important medium for access to information where illiteracy and a lack of infrastructure play a limiting role [3, 4, 5, 6]. While these technologies continually experience important advances that keep extending their applicability to new and under-resourced languages, one particular area in need of further development is speech synthesis of African tone languages [7, 8]. The main objective of this work is acoustic modelling and synthesis of tone for an African tone,language: Yorùbá. We present an empirical investigation to establish the acoustic properties of tone in Yorùbá, and to evaluate resulting models integrated into a Hidden Markov model-based (HMMbased) TTS system. We show that in Yorùbá, which is considered a register tone language, the realisation of tone is not solely determined by pitch levels, but also inter-syllable and intra-syllable pitch dynamics. Furthermore, our experimental results indicate that utterance-wide pitch patterns are not only a result of cumulative local pitch changes (terracing), but do contain a significant gradual declination component. Lastly, models based on inter- and intra-syllable pitch dynamics using underlying linear pitch targets are shown to be relatively efficient and perceptually preferable to the current standard approach …
+
+https://www.researchgate.net/post/How_can_I_carry_out_a_project_research_on_Automatic_Speech_Recognition_ASR_for_Yoruba_language
+
+There have been some recognition experiments on Yoruba e.g. A Review of Yorùbá Automatic Speech Recognition, Yusuf et al, 2013 IEEE 3rd International Conference on System Engineering and Technology, 19 - 20 Aug. 2013, Shah Alam, Malaysia; CROSS-LANGUAGE MAPPING FOR SMALL-VOCABULARY ASR IN UNDER-RESOURCED LANGUAGES: INVESTIGATING THE IMPACT OF SOURCE LANGUAGE CHOICE, Vakil and Palmer, SLTU 2014. Typically the language model is used to help differentiate between acoustically similar but distinct language contexts. The IARPA Babel programme has been looking at recognition and keyword spotting of low resource languages which covers a wide range of types of languages and should provide some useful information for you. There have been a number of papers published at Interspeech, ICASSP, SLTU and ASRU. The Kaldi toolkit provides a recipe to build a state-of-the-art ASR system for Babel languages. Depending on your experience and the data set(s) available for training your acoustic and language models this may be a good place to start.
+
+
+https://www.isca-speech.org/archive/interspeech_2014/i14_0036.html
+A Target Approximation Intonation Model for Yorùbá TTS
+Daniel R. van Niekerk, Etienne Barnard
+https://www.isca-speech.org/archive/archive_papers/interspeech_2014/i14_0036.pd
+
+
+https://www.researchgate.net/publication/271849557_Speech_Acoustic_Unit_Segmentation_Using_Hierarchical_Dirichlet_Processes
+
+Mandarin speech recognition using convolution neural network with augmented tone features
+https://ieeexplore.ieee.org/document/6936674
+
+
+https://www.aflat.org/files/aflat2009/slides/new-AfricanLanguageInitiative.pdf
+
+Building Capacities in Human Language Technology for African Languages
+Tunde Adegbola
+
+https://www.aclweb.org/anthology/W09-0708.pdf
+
+This study is based on the premise that it is possible to train computers to predict the language of a word (textual or audio) by learning from its character n‐gram pattern, without recourse to the language's dictionary. With the growth of multilingual collections and a need for automatic means of cleaning textual datasets, this paper presents a strategy for language identification of individual words in a body of texts. This strategy is suitable for resource‐scarce languages that do not have large electronic datasets that are required for machine learning and natural language processing studies and whose dictionaries may not be available. In this study, we focused on three African languages, namely Hausa, Igbo, and Yoruba. A training corpus in each of these languages was used to obtain the probabilities of character trigrams in the language. Given that English is a common language that is often mixed with these resource‐scarce languages in texts, we also obtained the probabilities of trigrams in an English training corpus. These probabilities were then used in identifying the language of each word in test corpora containing bilingual texts. Our strategy achieved average precision, recall and F1 values of about 97%, 91% and 94% respectively.
+
+https://www.researchgate.net/publication/327582036_A_Word-Level_Language_Identification_Strategy_for_Resource-Scarce_Languages
+
+
+http://www.africafocus.org/docs07/el0705.php
+
+
+https://github.com/Toluwase/Word-Level-Language-Identification-for-Resource-Scarce-
+
+https://www.sketchengine.eu/yowac-yoruba-corpus/
+
+https://www.researchgate.net/profile/Olutola_Fagbolu/publication/336274457_Digital_Yoruba_Corpus/links/5d9806dd299bf1c363f8e3c0/Digital-Yoruba-Corpus
+
+https://github.com/Niger-Volta-LTI/yoruba-text
+
+https://www.researchgate.net/publication/309092162_Design_of_a_Yoruba_Language_Speech_Corpus_for_the_Purposes_of_Text-to-Speech_TTS_Synthesis
+
+https://research.aston.ac.uk/en/publications/a-computational-model-of-intonation-for-yor%C3%B9b%C3%A1-text-to-speech-syn
+
+https://link.springer.com/chapter/10.1007%2F978-3-540-30120-2_52
+
+https://www.intechopen.com/books/from-natural-to-artificial-intelligence-algorithms-and-applications/convolutional-neural-networks-for-raw-speech-recognition
+
+https://yourstory.com/mystory/speech-to-text-using-convolutional-neural-networks
+
+
+
+
+https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/CNN_ASLPTrans2-14.pdf?irgwc=1&OCID=AID2000142_aff_7806_1246483&tduid=%28ir__3n1mp6niookftmjtkk0sohzjxm2xihxtyedlc3oa00%29%287806%29%281246483%29%28%283283fab34b8e9cb7166fb504c2f02716%29%2881561%29%28686431%29%28at106140_a107739_m12_p12460_cBR%29%28%29%29%283283fab34b8e9cb7166fb504c2f02716%29&irclickid=_3n1mp6niookftmjtkk0sohzjxm2xihxtyedlc3oa00
+
+Convolutional Neural Networks
+for Speech Recognition
