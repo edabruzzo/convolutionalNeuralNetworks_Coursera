@@ -1,4 +1,20 @@
+https://www.coursera.org/learn/convolutional-neural-networks/notebook/7XDi8/convolutional-model-step-by-step
+
 https://cs231n.github.io/convolutional-networks/#:~:text=In%20general%2C%20setting%20zero%20padding,talk%20more%20about%20ConvNet%20architectures.
+
+https://www.digikey.com/en/maker/projects/tensorflow-lite-tutorial-part-2-speech-recognition-model-training/d8d04a2b60a442cf8c3fa5c0dd2a292b
+
+https://arxiv.org/pdf/1701.02720.pdf
+
+https://arxiv.org/pdf/1812.06864.pdf
+
+https://www.researchgate.net/post/How_can_I_give_speech_data_as_input_to_a_convolutional_neural_network
+
+file:///home/usuario/Downloads/speechpyjoss.pdf
+
+https://github.com/ppwwyyxx/speaker-recognition
+
+https://www.intechopen.com/books/from-natural-to-artificial-intelligence-algorithms-and-applications/convolutional-neural-networks-for-raw-speech-recognition
 
 https://www.semanticscholar.org/paper/Convolutional-Neural-Networks-for-Speech-Abdel-Hamid-Mohamed/86efe7769f2b8a0e15ca213ab09881e6705caeb0?p2df
 

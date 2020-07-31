@@ -81,7 +81,30 @@ np.random.seed(1)
 
 # GRADED FUNCTION: zero_pad
 
+
+
 def zero_pad(X, pad):
+    """
+    Pad with zeros all images of the dataset X. The padding is applied to the height and width of an image,
+    as illustrated in Figure 1.
+    Argument:
+    X -- python numpy array of shape (m, n_H, n_W, n_C) representing a batch of m images
+    pad -- integer, amount of padding around each image on vertical and horizontal dimensions
+    Returns:
+    X_pad -- padded image of shape (m, n_H + 2*pad, n_W + 2*pad, n_C)
+    """
+
+    ### START CODE HERE ### (≈ 1 line)
+    X_pad = np.pad(X, ((0, 0), (pad, pad), (pad, pad), (0, 0)), 'constant', constant_values=(0, 0))
+    ### END CODE HERE ###
+
+    return X_pad
+
+
+
+
+def pad_with(vector, pad_width, iaxis, kwargs):
+
     """
     Pad with zeros all images of the dataset X. The padding is applied to the height and width of an image, 
     as illustrated in Figure 1.
@@ -93,51 +116,38 @@ def zero_pad(X, pad):
     Returns:
     X_pad -- padded image of shape (m, n_H + 2*pad, n_W + 2*pad, n_C)
     """
-    
+
     ### START CODE HERE ### (≈ 1 line)
-    X_pad = None
+    #https://numpy.org/doc/stable/reference/generated/numpy.pad.html
+    pad_value = kwargs.get('padder', 0)
+    vector[:pad_width[0]] = pad_value
+    vector[-pad_width[1]:] = pad_value
+
     ### END CODE HERE ###
     
-    return X_pad
+    return vector
 
 
 # In[ ]:
 
 np.random.seed(1)
 x = np.random.randn(4, 3, 3, 2)
+#https://numpy.org/doc/stable/reference/generated/numpy.pad.html
+#x_pad = np.pad(x, 2, pad_with)
 x_pad = zero_pad(x, 2)
 print ("x.shape =\n", x.shape)
 print ("x_pad.shape =\n", x_pad.shape)
 print ("x[1,1] =\n", x[1,1])
 print ("x_pad[1,1] =\n", x_pad[1,1])
 
+'''
 fig, axarr = plt.subplots(1, 2)
 axarr[0].set_title('x')
 axarr[0].imshow(x[0,:,:,0])
 axarr[1].set_title('x_pad')
 axarr[1].imshow(x_pad[0,:,:,0])
+'''
 
-
-# **Expected Output**:
-# 
-# ```
-# x.shape =
-#  (4, 3, 3, 2)
-# x_pad.shape =
-#  (4, 7, 7, 2)
-# x[1,1] =
-#  [[ 0.90085595 -0.68372786]
-#  [-0.12289023 -0.93576943]
-#  [-0.26788808  0.53035547]]
-# x_pad[1,1] =
-#  [[ 0.  0.]
-#  [ 0.  0.]
-#  [ 0.  0.]
-#  [ 0.  0.]
-#  [ 0.  0.]
-#  [ 0.  0.]
-#  [ 0.  0.]]
-# ```
 
 # ### 3.2 - Single step of convolution 
 # 
@@ -179,11 +189,11 @@ def conv_single_step(a_slice_prev, W, b):
 
     ### START CODE HERE ### (≈ 2 lines of code)
     # Element-wise product between a_slice_prev and W. Do not add the bias yet.
-    s = None
+    s = np.multiply(a_slice_prev, W)
     # Sum over all entries of the volume s.
-    Z = None
+    Z = np.sum(s)
     # Add bias b to Z. Cast b to a float() so that Z results in a scalar value.
-    Z = None
+    Z += float(b)
     ### END CODE HERE ###
 
     return Z
@@ -288,47 +298,49 @@ def conv_forward(A_prev, W, b, hparameters):
     
     ### START CODE HERE ###
     # Retrieve dimensions from A_prev's shape (≈1 line)  
-    (m, n_H_prev, n_W_prev, n_C_prev) = None
+    (m, n_H_prev, n_W_prev, n_C_prev) = A_prev.shape
     
     # Retrieve dimensions from W's shape (≈1 line)
-    (f, f, n_C_prev, n_C) = None
+    (f, f, n_C_prev, n_C) = W.shape
     
     # Retrieve information from "hparameters" (≈2 lines)
-    stride = None
-    pad = None
+    stride = hparameters['stride']
+    pad = hparameters['pad']
+
     
     # Compute the dimensions of the CONV output volume using the formula given above. 
     # Hint: use int() to apply the 'floor' operation. (≈2 lines)
-    n_H = None
-    n_W = None
+    n_H = int(((n_H_prev - f + 2 * pad) / stride) + 1)
+    n_W = int(((n_W_prev - f + 2 * pad) / stride) + 1)
     
     # Initialize the output volume Z with zeros. (≈1 line)
-    Z = None
+    Z = np.zeros(m, n_H, n_W, n_C)
     
     # Create A_prev_pad by padding A_prev
-    A_prev_pad = None
+    A_prev_pad = np.pad(A_prev, pad)
     
-    for i in range(None):               # loop over the batch of training examples
-        a_prev_pad = None               # Select ith training example's padded activation
-        for h in range(None):           # loop over vertical axis of the output volume
+    for i in range(m):               # loop over the batch of training examples
+        a_prev_pad = A_prev_pad[i]               # Select ith training example's padded activation
+        for h in range(n_H):           # loop over vertical axis of the output volume
             # Find the vertical start and end of the current "slice" (≈2 lines)
-            vert_start = None
-            vert_end = None
+            vert_start = stride * h
+            vert_end = stride * h + f
             
-            for w in range(None):       # loop over horizontal axis of the output volume
+            for w in range(n_W):       # loop over horizontal axis of the output volume
                 # Find the horizontal start and end of the current "slice" (≈2 lines)
-                horiz_start = None
-                horiz_end = None
+                horiz_start = stride * w
+                horiz_end = stride * w + f
                 
-                for c in range(None):   # loop over channels (= #filters) of the output volume
+                for c in range(n_C):   # loop over channels (= #filters) of the output volume
                                         
                     # Use the corners to define the (3D) slice of a_prev_pad (See Hint above the cell). (≈1 line)
-                    a_slice_prev = None
+                    a_slice_prev = A_prev_pad[i, vert_start:vert_end, horiz_start:horiz_end, :]
+
                     
                     # Convolve the (3D) slice with the correct filter W and bias b, to get back one output neuron. (≈3 line)
                     weights = None
                     biases = None
-                    Z[i, h, w, c] = None
+                    Z[i, h, w, c] = conv_single_step(a_slice_prev, W[:, :, :, c], b[:, :, :, c])
                                         
     ### END CODE HERE ###
     
