@@ -1,3 +1,9 @@
+https://github.com/AdalbertoCq/Deep-Learning-Specialization-Coursera/blob/master/Convolutional%20Neural%20Networks/week1/convolution_model.py
+
+https://github.com/HeroKillerEver/coursera-deep-learning/tree/master/Convolutional%20Neural%20Networks/Convolutional%20Model-%20step%20by%20step
+
+https://datascience-enthusiast.com/DL/Convolution_model_Step_by_Stepv2.html
+
 https://www.coursera.org/learn/convolutional-neural-networks/notebook/7XDi8/convolutional-model-step-by-step
 
 https://cs231n.github.io/convolutional-networks/#:~:text=In%20general%2C%20setting%20zero%20padding,talk%20more%20about%20ConvNet%20architectures.
